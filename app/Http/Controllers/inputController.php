@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\perangkat;
 use Illuminate\Http\Request;
 
 class inputController extends Controller
@@ -34,7 +34,23 @@ class inputController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "Serial_Number"->"string|required",
+            "Nomor_Inventaris"->"string|required",
+            "Merek"->"string|required",
+            "Kondisi"->"string|required",
+            "Nomor_Kontrak"->"string|required",
+            "Tahun_Perolehan"->"date|required",
+        ])
+        $p = new perangkat;
+        $p->Serial_Number = request->input("Serial_Number");
+        $p->Nomor_Inventaris = request->input("Nomor_Inventaris");
+        $p->Merek = request->input("Merek");
+        $p->Kondisi = request->input("Kondisi");
+        $p->Nomor_Kontrak = request->input("Nomor_Kontrak");
+        $p->Tahun_Perolehan = request->input("Tahun_Perolehan");
+        $p->save();
+        return redirect('perangkat')->with('success');
     }
 
     /**
