@@ -21,18 +21,30 @@
       </div><br />
     @endif
       <form method="post" action="{{ route('shares.store') }}">
-          <div class="form-group">
-              @csrf
-              <label for="name">Share Name:</label>
-              <input type="text" class="form-control" name="share_name"/>
+      @csrf
+          <div class="form-group">              
+              <label for="Serial_Number">Serial Number</label>
+              <input type="text" class="form-control" name="Serial_Number"/>
           </div>
-          <div class="form-group">
-              <label for="price">Share Price :</label>
-              <input type="text" class="form-control" name="share_price"/>
+          <div class="form-group">              
+              <label for="Nomor_Inventaris">Nomor Inventaris</label>
+              <input type="text" class="form-control" name="Nomor_Inventaris/>
           </div>
-          <div class="form-group">
-              <label for="quantity">Share Quantity:</label>
-              <input type="text" class="form-control" name="share_qty"/>
+          <div class="form-group">              
+              <label for="Merek">Merek</label>
+              <input type="text" class="form-control" name="Merek"/>
+          </div>
+          <div class="form-group">              
+              <label for="Kondisi">Kondisi</label>
+              <input type="text" class="form-control" name="Kondisi"/>
+          </div>
+          <div class="form-group">              
+              <label for="Nomor_Kontrak">Nomor Kontrak:</label>
+              <input type="text" class="form-control" name="Nomor Kontrak"/>
+          </div>
+          <div class="form-group">              
+              <label for="Tahun_Perolehan">Tahun_Perolehan</label>
+              <input type="text" class="form-control" name="Tahun_Perolehan"/>
           </div>
           <button type="submit" class="btn btn-primary">Add</button>
       </form>
